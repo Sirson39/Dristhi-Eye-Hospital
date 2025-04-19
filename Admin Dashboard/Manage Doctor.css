@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    display: block;
+    background-color: #f4f4f4;
+  }
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;      /* keep your desired width */
+    height: 100vh;     /* full height of the viewport */
+    overflow-y: auto;  /* allow scrolling if content exceeds the viewport */
+    background-color: #135fa0;
+    color: white;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .sidebar h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .sidebar a {
+    display: block;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+  }
+  
+  .sidebar a:hover {
+    background-color: #2ea6db;
+  }
+  
+  .main-content {
+    margin-left: 250px; 
+    flex: 1;
+    padding: 2rem;
+  }
+  
+  .dashboard-header {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #135fa0;
+    margin-bottom: 1.5rem;
+  }
+  
+  .card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .card th,
+  .card td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+  }
+  
+  .card th {
+    background-color: #135fa0;
+    color: white;
+  }
+  
+  .card tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  button {
+    background-color: #2ea6db;
+    border: none;
+    padding: 8px 15px;
+    color: white;
+    border-radius: 4px;
+    margin-right: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #135fa0;
+  }
+  .doctor-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  .doctor-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+  }
+  .doctor-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .doctor-card .info {
+    padding: 1rem;
+    flex: 1;
+  }
+  .doctor-card .info h3 {
+    font-size: 1.1rem;
+    color: #135fa0;
+    margin-bottom: 0.3rem;
+  }
+  .doctor-card .info p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1rem;
+  }
+
+  .doctor-card .actions {
+    display: flex;
+  }
+  .doctor-card .actions button {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  .doctor-card .actions .btn-view {
+    background-color: #2ea6db;
+    color: #fff;
+  }
+  .doctor-card .actions .btn-book {
+    background-color: #135fa0;
+    color: #fff;
+  }
+  .doctor-card .actions button + button {
+    border-left: 1px solid #fff;
+  }
+  .doctor-card .actions button:hover {
+    opacity: 0.9;
+  }
+
+  /* Optional: highlight active sidebar link */
+  .sidebar a.active {
+    background-color: #2ea6db;
+  }
+  /* ======= Doctor Cards Grid ======= */
+  .doctor-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  .doctor-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+  }
+  .doctor-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .doctor-card .info {
+    padding: 1rem;
+    flex: 1;
+  }
+  .doctor-card .info h3 {
+    font-size: 1.1rem;
+    color: #135fa0;
+    margin-bottom: 0.3rem;
+  }
+  .doctor-card .info p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0.2rem 0;
+  }
+
+  .doctor-card .actions {
+    display: flex;
+  }
+  .doctor-card .actions button {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: opacity 0.2s;
+  }
+  .doctor-card .actions .btn-edit {
+    background-color: #2ea6db;
+    color: #fff;
+  }
+  .doctor-card .actions .btn-delete {
+    background-color: #e74c3c;
+    color: #fff;
+  }
+  .doctor-card .actions button + button {
+    border-left: 1px solid #fff;
+  }
+  .doctor-card .actions button:hover {
+    opacity: 0.9;
+  }
+
+  /* Add Doctor button */
+  .add-doctor-btn {
+    background-color: #2ea6db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+  .add-doctor-btn i {
+    margin-right: 8px;
+  }
+  .add-doctor-btn:hover {
+    background-color: #135fa0;
+  }
+
+  /* Highlight active sidebar link */
+  .sidebar a.active {
+    background-color: #2ea6db;
+  }

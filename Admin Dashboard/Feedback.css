@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    display: block;
+    background-color: #f4f4f4;
+  }
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;      /* keep your desired width */
+    height: 100vh;     /* full height of the viewport */
+    overflow-y: auto;  /* allow scrolling if content exceeds the viewport */
+    background-color: #135fa0;
+    color: white;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .sidebar h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .sidebar a {
+    display: block;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+  }
+  
+  .sidebar a:hover {
+    background-color: #2ea6db;
+  }
+  
+  .main-content {
+    margin-left: 250px; 
+    flex: 1;
+    padding: 2rem;
+  }
+  
+  .dashboard-header {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #135fa0;
+    margin-bottom: 1.5rem;
+  }
+  
+  .card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .card th,
+  .card td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+  }
+  
+  .card th {
+    background-color: #135fa0;
+    color: white;
+  }
+  
+  .card tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  button {
+    background-color: #2ea6db;
+    border: none;
+    padding: 8px 15px;
+    color: white;
+    border-radius: 4px;
+    margin-right: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #135fa0;
+  }
+  
+  /* Optional: highlight active sidebar link */
+  .sidebar a.active {
+    background-color: #2ea6db;
+  }
+  .main-content {
+    flex: 1;
+    padding: 2rem;
+  }
+  .dashboard-header {
+    font-size: 1.8rem;
+    color: #135fa0;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  .feedback-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+  .feedback-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .feedback-card .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+  .feedback-card .header .id {
+    font-weight: bold;
+    color: #135fa0;
+  }
+  .feedback-card .header .date {
+    color: #666;
+    font-size: 0.9rem;
+  }
+  .feedback-card .meta {
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+  }
+  .feedback-card .meta .patient {
+    font-weight: 600;
+  }
+  .feedback-card .meta .type {
+    float: right;
+    font-style: italic;
+    color: #666;
+  }
+  .feedback-card .ratings {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .feedback-card .ratings div {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+  }
+  .feedback-card .ratings i {
+    color: #f1c40f;
+  }
+  .feedback-card .comments {
+    flex: 1;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  .feedback-card .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+  .status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+  }
+  .status-pending  { background-color: #f1c40f; }
+  .status-reviewed { background-color: #28a745; }
+  .status-flagged  { background-color: #e74c3c; }
+  .actions button {
+    border: none;
+    background: none;
+    color: #135fa0;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .actions button:hover {
+    text-decoration: underline;
+  }
