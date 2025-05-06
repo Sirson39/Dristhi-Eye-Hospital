@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    background-color: #f4f4f4;
+    display: flex;
+  }
+  
+  /* Sidebar styling */
+  .sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #135fa0;
+    color: white;
+    padding: 2rem 1rem;
+    position: fixed;
+  }
+  
+  .sidebar h2 {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  
+  .sidebar a.active,
+  .sidebar a:hover {
+    background-color: #2ea6db;
+  }
+
+  /* Main content */
+  .main-content {
+    flex: 1;
+    padding: 2rem;
+    margin-left: 250px;
+    width: calc(100% - 250px);
+  }
+
+  .dashboard-header {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: #135fa0;
+    font-weight: bold;
+  }
+  
+  .test-section {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .test-section h2 {
+    color: #135fa0;
+    margin-bottom: 1.5rem;
+  }
+  
+  .test-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .test-form label {
+    font-weight: bold;
+  }
+  
+  .test-form input,
+  .test-form select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+  
+  .test-form button {
+    width: fit-content;
+    padding: 10px 20px;
+    background-color: #135fa0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .test-form button:hover {
+    background-color: #0f4c7a;
+  }
+  
+  .test-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  .test-table th,
+  .test-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+
+  .test-form select.doctor-select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+  
+  .test-form select.doctor-select option {
+    padding: 10px;
+  }
