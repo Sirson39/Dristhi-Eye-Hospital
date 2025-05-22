@@ -1,0 +1,221 @@
+/* ==== RESET & BASE ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  display: flex;
+}
+
+/* ==== SIDEBAR ==== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;               /* same offset as main content */
+  height: 100vh;
+  background-color: #135fa0;  /* dark blue */
+  padding: 2rem 0;            /* vertical padding */
+  overflow-y: auto;
+  box-shadow: 2px 0 6px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.sidebar h2 {
+  color: #fff;
+  font-size: 1.75rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.25rem;
+ 	margin: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: background 0.2s ease;
+    white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+    
+  }
+
+.sidebar a i {
+  font-size: 1.2rem;
+}
+
+/* Active link (light-blue pill) */
+.sidebar a.active {
+  background-color: #2ea6db;
+}
+
+/* Hover state for others */
+.sidebar a:not(.active):hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* ==== MAIN CONTENT ==== */
+.main-content {
+  margin-left: 250px;         /* push content clear of sidebar */
+  padding: 2rem;
+  flex: 1;
+}
+
+/* ==== PAGE HEADER ==== */
+.dashboard-header {
+  font-size: 1.8rem;
+  color: #135fa0;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+/* ==== CARDS ==== */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.card h3 {
+  color: #2ea6db;
+  margin-bottom: 1rem;
+}
+
+/* ==== FORM ROWS ==== */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background: #fff;
+}
+
+.form-group input[readonly],
+.form-group textarea[readonly] {
+  background: #eee;
+}
+
+/* ==== FORM ACTIONS ==== */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-edit {
+  background-color: #2ea6db;
+}
+
+.btn-edit:hover {
+  background-color: #135fa0;
+}
+
+.btn-save {
+  background-color: #135fa0;
+}
+
+.btn-save:hover {
+  background-color: #2ea6db;
+}
+
+.btn-cancel,
+.btn-logout {
+  background-color: #e74c3c;
+}
+
+.btn-cancel:hover,
+.btn-logout:hover {
+  background-color: #c0392b;
+}
+
+/* ==== PROFILE PICTURE PREVIEW ==== */
+#profilePicPreview {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: 0.5rem;
+}
+
+/* ==== PASSWORD STRENGTH ==== */
+.strength-bar {
+  width: 100%;
+  height: 6px;
+  background: #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.strength-bar > div {
+  height: 100%;
+  width: 0;
+  background: #e74c3c;
+  transition: width 0.3s ease;
+}
+
+.strength-text {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 0.25rem;
+}
+
+/* ==== NOTIFICATION CHECKBOXES ==== */
+.card .form-group input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  .main-content {
+    margin-left: 0;
+  }
+}
