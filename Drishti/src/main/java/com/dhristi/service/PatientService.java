@@ -7,13 +7,20 @@ import com.dhristi.model.PatientModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+<<<<<<< HEAD
 import java.sql.SQLException;
+=======
+>>>>>>> 57b51863fd891538f57837ab03930237f9d7dc1d
 
 public class PatientService {
 
     // ✅ Update patient profile
     public boolean updatePatientProfile(PatientModel patient) {
+<<<<<<< HEAD
         String sql = "UPDATE User SET name = ?, email = ?, phone = ?, age = ?, gender = ?, bloodGroup = ?, address = ? WHERE userId = ?";
+=======
+        String sql = "UPDATE User SET name = ?, email = ?, phoneNumber = ?, age = ?, gender = ?, bloodGroup = ?, address = ? WHERE userId = ?";
+>>>>>>> 57b51863fd891538f57837ab03930237f9d7dc1d
 
         try (Connection conn = DbConfig.getDbConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -76,6 +83,7 @@ public class PatientService {
 
         return false;
     }
+<<<<<<< HEAD
     
     public PatientModel getPatientByAppointment(int appointmentId) throws SQLException, ClassNotFoundException {
         String sql = "SELECT p.* FROM patient p " +
@@ -124,3 +132,6 @@ public class PatientService {
     }
 }
 
+=======
+}
+>>>>>>> 57b51863fd891538f57837ab03930237f9d7dc1d

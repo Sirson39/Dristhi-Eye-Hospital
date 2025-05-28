@@ -5,6 +5,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
 import java.io.IOException;
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,10 +58,31 @@ public class AddTreatmentController extends HttpServlet {
 
         HttpSession session = request.getSession(false);
         if (session == null || !"doctor".equalsIgnoreCase((String) session.getAttribute("userRole"))) {
+=======
+
+@WebServlet("/Admin/add-treatment")
+public class AddTreatmentController extends HttpServlet {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        System.out.println("➡️ /add-treatment HIT");
+
+        HttpSession session = request.getSession(false);
+        System.out.println("🔍 Session = " + session);
+
+        if (session != null) {
+            Object role = session.getAttribute("userRole");
+            System.out.println("🔍 userRole = " + role);
+        }
+
+        if (session == null || !"doctor".equalsIgnoreCase((String) session.getAttribute("userRole"))) {
+            System.out.println("❌ Redirecting to login");
+>>>>>>> 57b51863fd891538f57837ab03930237f9d7dc1d
             response.sendRedirect(request.getContextPath() + "/login");
             return;
         }
 
+<<<<<<< HEAD
         int userId = Integer.parseInt(request.getParameter("userId")); // Assuming patient ID
         String diagnosis = request.getParameter("diagnosis");
         String testRecommendations = request.getParameter("testRecommendations");
@@ -109,5 +131,15 @@ public class AddTreatmentController extends HttpServlet {
             request.setAttribute("error", "Error: " + e.getMessage());
             request.getRequestDispatcher("/WEB-INF/pages/Admin/AddTreatment.jsp").forward(request, response);
         }
+=======
+        System.out.println("✅ Role valid. Loading page.");
+        request.getRequestDispatcher("/WEB-INF/pages/Admin/AddTreatment.jsp").forward(request, response);
+    }
+
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        doGet(request, response);
+>>>>>>> 57b51863fd891538f57837ab03930237f9d7dc1d
     }
 }

@@ -5,7 +5,11 @@ package com.dhristi.model;
  * Represents a patient in the Eye Hospital Management System.
  */
 public class PatientModel {
+<<<<<<< HEAD
 	private int patientId;
+=======
+    private int patientId;
+>>>>>>> 57b51863fd891538f57837ab03930237f9d7dc1d
     private String name;
     private String gender;
     private String email;
@@ -14,10 +18,13 @@ public class PatientModel {
     private String address;
     private String passwordHash;
     private int age;
+<<<<<<< HEAD
     private int appointmentId;
 	private String userRole;
 	private int userId;
 
+=======
+>>>>>>> 57b51863fd891538f57837ab03930237f9d7dc1d
 
     public PatientModel() { }
 
@@ -25,7 +32,10 @@ public class PatientModel {
     public int getPatientId() {
         return patientId;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 57b51863fd891538f57837ab03930237f9d7dc1d
     public void setPatientId(int patientId) {
         this.patientId = patientId;
     }
@@ -36,6 +46,7 @@ public class PatientModel {
     public void setName(String name) {
         this.name = name;
     }
+<<<<<<< HEAD
     
     public int getAppointmentId() {
         return appointmentId;
@@ -44,6 +55,8 @@ public class PatientModel {
         return userRole;
     }
 
+=======
+>>>>>>> 57b51863fd891538f57837ab03930237f9d7dc1d
 
     public int getAge() {
         return age;
@@ -66,6 +79,7 @@ public class PatientModel {
         this.email = email;
     }
 
+<<<<<<< HEAD
     public void setPhone(String phone) {
         this.phone = phone;
     }
@@ -76,6 +90,14 @@ public class PatientModel {
     public void setUserId(int userId) {
         this.userId = userId;
     }
+=======
+    public String getPhone() {
+        return phone;
+    }
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+>>>>>>> 57b51863fd891538f57837ab03930237f9d7dc1d
 
     public String getBloodGroup() {
         return bloodGroup;
@@ -97,6 +119,7 @@ public class PatientModel {
     public void setPasswordHash(String passwordHash) {
         this.passwordHash = passwordHash;
     }
+<<<<<<< HEAD
     public void setAppointmentId(int appointmentId) {
         this.appointmentId = appointmentId;
     }
@@ -111,6 +134,8 @@ public class PatientModel {
         this.phone = phone;
     }
 
+=======
+>>>>>>> 57b51863fd891538f57837ab03930237f9d7dc1d
 
     @Override
     public String toString() {

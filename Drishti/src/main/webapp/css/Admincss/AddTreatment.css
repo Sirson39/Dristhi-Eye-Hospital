@@ -193,6 +193,7 @@
     cursor: pointer;
     font-size: 1rem;
   }
+<<<<<<< HEAD
   
   /* 🟦 Main Form Styling */
 .patient-id-form, .treatment-form {
@@ -285,6 +286,8 @@
 }
 
   
+=======
+>>>>>>> 57b51863fd891538f57837ab03930237f9d7dc1d
   @media (max-width: 768px) {
     .sidebar {
       display: none;
