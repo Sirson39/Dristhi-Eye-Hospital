@@ -55,8 +55,11 @@ public class LoginController extends HttpServlet {
                     HttpSession session = request.getSession();
                     session.setAttribute("loggedUser", user);
                     session.setAttribute("userRole", userRole);
+<<<<<<< HEAD
                     session.setAttribute("userId", userId);
 
+=======
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
 
                     System.out.println("✅ Login successful. userRole = " + userRole);
 

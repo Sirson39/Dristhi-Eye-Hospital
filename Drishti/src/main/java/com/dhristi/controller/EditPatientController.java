@@ -29,13 +29,20 @@ public class EditPatientController extends HttpServlet {
         String phone = req.getParameter("phone");
 
         UserModel updated = new UserModel();
+<<<<<<< HEAD
         updated.setUserId(userId);
         updated.setName(name);
         updated.setEmail(email);
         updated.setPhoneNumber(phone);
 
+=======
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
         userService.updatePatient(updated);
 
         resp.sendRedirect(req.getContextPath() + "/manage-patients");
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04

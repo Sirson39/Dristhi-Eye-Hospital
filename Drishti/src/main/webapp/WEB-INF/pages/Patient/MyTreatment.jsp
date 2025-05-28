@@ -11,6 +11,7 @@
   @charset "UTF-8";
 /* My Treatments Page Styling */
 
+<<<<<<< HEAD
 *{
   margin: 0px;
   padding: 0px;
@@ -18,10 +19,13 @@
   font-family: 'Segoe UI', sans-serif;
   }
   
+=======
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
 body {
   background-color: #f4f4f4;
   display: flex;
 }
+<<<<<<< HEAD
 .sidebar {
   position: fixed;
   top: 0;
@@ -38,14 +42,31 @@ body {
 }
 
 /* Sidebar Title */
+=======
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #135fa0;
+  color: white;
+  padding: 2rem 1rem;
+  position: fixed;
+}
+
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
 .sidebar h2 {
   margin-bottom: 2rem;
   font-size: 1.5rem;
   text-align: center;
+<<<<<<< HEAD
   font-weight: 600;
 }
 
 /* Sidebar Links */
+=======
+}
+
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
 .sidebar a {
   display: flex;
   align-items: center;
@@ -55,6 +76,7 @@ body {
   padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 8px;
+<<<<<<< HEAD
   transition: background-color 0.3s;
   font-size: 1rem; /* Adjusted for better readability */
 }
@@ -70,14 +92,29 @@ body {
 }
 
 /* Main Content shifted to the right of Sidebar */
+=======
+  transition: background 0.3s;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+  background-color: #2ea6db;
+}
+
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
 .main-content {
   margin-left: 250px;
   flex: 1;
   padding: 2rem;
+<<<<<<< HEAD
   background-color: #f4f4f4;
   min-height: 100vh;
   box-sizing: border-box;
 }
+=======
+}
+
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
 .page-header {
   font-size: 2rem;
   color: #135fa0;

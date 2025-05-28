@@ -1,0 +1,161 @@
+/* ==== RESET & BASE ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  display: flex;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: #135fa0;
+  padding: 2rem 0;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.sidebar h2 {
+  color: white;
+  font-size: 1.75rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+ .sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.25rem;
+ 	margin: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: background 0.2s ease;
+    white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+    
+  }
+
+.sidebar a i {
+  font-size: 1.2rem;
+  color: white !important;
+}
+
+.sidebar a.active {
+  background-color: #2ea6db !important;
+}
+
+.sidebar a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ==== MAIN CONTENT ==== */
+.main-content {
+  margin-left: 250px;
+  flex: 1;
+  padding: 2rem;
+}
+
+/* ==== HEADER ==== */
+.dashboard-header {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #135fa0;
+  margin-bottom: 2rem;
+}
+
+/* ==== APPOINTMENT CARD ==== */
+.appointment-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  margin-bottom: 25px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.appointment-card:hover {
+  transform: translateY(-5px);
+}
+
+.appointment-info h2 {
+  margin-bottom: 10px;
+  color: #135fa0;
+}
+
+.appointment-info p {
+  margin-bottom: 6px;
+  color: #555;
+  font-size: 15px;
+}
+
+/* ==== BUTTONS ==== */
+.appointment-actions {
+  margin-top: 20px;
+}
+
+.appointment-actions button {
+  padding: 10px 18px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.view-btn {
+  background-color: #48cae4;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.reschedule-btn {
+  background-color: #00b4d8;
+  color: white;
+}
+
+.appointment-actions button:hover {
+  opacity: 0.9;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 600px) {
+  .appointment-card {
+    padding: 20px;
+  }
+
+  .appointment-actions button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+}

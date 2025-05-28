@@ -100,6 +100,10 @@ public class AppointmentService {
     }
 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
     public int getTotalPatients() {
         int count = 0;
         String sql = "SELECT COUNT(DISTINCT patientName) FROM appointment";
@@ -231,11 +235,21 @@ public class AppointmentService {
         }
     }
     
+<<<<<<< HEAD
+=======
+=======
+    // ✅ Get all appointments (for admin use)
+>>>>>>> 57b51863fd891538f57837ab03930237f9d7dc1d
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
     public List<AppointmentModel> getAllAppointments() {
         List<AppointmentModel> list = new ArrayList<>();
         String sql = "SELECT * FROM appointment";
 
         try (Connection conn = DbConfig.getDbConnection();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
              PreparedStatement stmt = conn.prepareStatement(sql);
              ResultSet rs = stmt.executeQuery()) {
 
@@ -287,12 +301,25 @@ public class AppointmentService {
             }
 
             ResultSet rs = stmt.executeQuery();
+<<<<<<< HEAD
+=======
+=======
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            ResultSet rs = stmt.executeQuery();
+
+>>>>>>> 57b51863fd891538f57837ab03930237f9d7dc1d
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
             while (rs.next()) {
                 AppointmentModel appt = new AppointmentModel();
                 appt.setAppointmentId(rs.getInt("appointmentId"));
                 appt.setAppointmentDate(rs.getString("appointmentDate"));
                 appt.setAppointmentReason(rs.getString("appointmentReason"));
                 appt.setAppointmentStatus(rs.getString("appointmentStatus"));
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
                 appt.setDept(rs.getString("dept"));
                 appt.setPatientName(rs.getString("patientName"));
                 list.add(appt);
@@ -304,4 +331,22 @@ public class AppointmentService {
     }
 
 
+<<<<<<< HEAD
 }
+=======
+}
+=======
+                appt.setPatientName(rs.getString("patientName"));
+                appt.setDept(rs.getString("dept"));
+                list.add(appt);
+            }
+
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return list;
+    }
+}
+>>>>>>> 57b51863fd891538f57837ab03930237f9d7dc1d
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04

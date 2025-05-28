@@ -7,13 +7,28 @@ import com.dhristi.model.PatientModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+<<<<<<< HEAD
 import java.sql.SQLException;
+=======
+<<<<<<< HEAD
+import java.sql.SQLException;
+=======
+>>>>>>> 57b51863fd891538f57837ab03930237f9d7dc1d
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
 
 public class PatientService {
 
     // ✅ Update patient profile
     public boolean updatePatientProfile(PatientModel patient) {
+<<<<<<< HEAD
         String sql = "UPDATE User SET name = ?, email = ?, phone = ?, age = ?, gender = ?, bloodGroup = ?, address = ? WHERE userId = ?";
+=======
+<<<<<<< HEAD
+        String sql = "UPDATE User SET name = ?, email = ?, phone = ?, age = ?, gender = ?, bloodGroup = ?, address = ? WHERE userId = ?";
+=======
+        String sql = "UPDATE User SET name = ?, email = ?, phoneNumber = ?, age = ?, gender = ?, bloodGroup = ?, address = ? WHERE userId = ?";
+>>>>>>> 57b51863fd891538f57837ab03930237f9d7dc1d
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
 
         try (Connection conn = DbConfig.getDbConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -76,6 +91,10 @@ public class PatientService {
 
         return false;
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
     
     public PatientModel getPatientByAppointment(int appointmentId) throws SQLException, ClassNotFoundException {
         String sql = "SELECT p.* FROM patient p " +
@@ -124,3 +143,9 @@ public class PatientService {
     }
 }
 
+<<<<<<< HEAD
+=======
+=======
+}
+>>>>>>> 57b51863fd891538f57837ab03930237f9d7dc1d
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04

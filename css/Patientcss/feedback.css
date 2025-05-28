@@ -1,0 +1,137 @@
+@charset "UTF-8";
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    background-color: #f4f4f4;
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #135fa0;
+    color: white;
+    padding: 2rem 1rem;
+    position: fixed;
+  }
+  
+  .sidebar h2 {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  
+  .sidebar a.active,
+  .sidebar a:hover {
+    background-color: #2ea6db;
+  }
+  
+  .main-content {
+    margin-left: 250px;
+    flex: 1;
+    padding: 2rem;
+  } 
+
+  /* Title */
+   .dashboard-header {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #135fa0;
+    font-weight: bold;
+  }
+  
+  .subtitle {
+    text-align: left;
+    font-size: 18px;
+    margin-bottom: 2rem;
+    color: #555;
+  }
+  
+  /* Review Form */
+  .review-form {
+    
+    margin: 0 auto;
+    background: white;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .review-form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  
+  .review-form select,
+  .review-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: vertical;
+    font-size: 15px;
+  }
+  
+  /* Star Rating */
+  .stars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    margin-top: 6px;
+  }
+  
+  .stars input[type="radio"] {
+    display: none;
+  }
+  
+  .stars label {
+    font-size: 26px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .stars input[type="radio"]:checked ~ label,
+  .stars label:hover,
+  .stars label:hover ~ label {
+    color: gold;
+  }
+  
+  /* Button */
+  .review-form button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .review-form button:hover {
+    background-color: #1976d2;
+  }
+ 
+  
+  

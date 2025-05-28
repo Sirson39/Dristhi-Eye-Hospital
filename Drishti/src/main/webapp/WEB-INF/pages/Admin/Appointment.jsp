@@ -74,7 +74,15 @@
   <div class="dashboard-header">Manage Appointments</div>
 
   <!-- Filter Form -->
+<<<<<<< HEAD
  <form action="${pageContext.request.contextPath}/Admin/appointments" method="get" class="filters">
+=======
+<<<<<<< HEAD
+ <form action="${pageContext.request.contextPath}/Admin/appointments" method="get" class="filters">
+=======
+  <form action="${pageContext.request.contextPath}/appointments" method="get" class="filters">
+>>>>>>> 57b51863fd891538f57837ab03930237f9d7dc1d
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
     <input type="text" name="search" placeholder="Search patient..." value="${param.search}" />
     <input type="date" name="fromDate" value="${param.fromDate}" />
     <input type="date" name="toDate" value="${param.toDate}" />
@@ -88,6 +96,13 @@
         <tr>
           <th>ID</th>
           <th>Date</th>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+          <th>Time</th>
+>>>>>>> 57b51863fd891538f57837ab03930237f9d7dc1d
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
           <th>Department</th>
           <th>Reason</th>
           <th>Status</th>
@@ -102,11 +117,22 @@
               <tr>
                 <td>${a.appointmentId}</td>
                 <td>${a.appointmentDate}</td>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+                <td>${a.time}</td>
+>>>>>>> 57b51863fd891538f57837ab03930237f9d7dc1d
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
                 <td>${a.dept}</td>
                 <td>${a.appointmentReason}</td>
 
                 <!-- Status form with dropdown -->
                 <td>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
                   <form action="${pageContext.request.contextPath}/Admin/appointments" method="post" class="status-form">
   <input type="hidden" name="action" value="updateStatus"/>
   <input type="hidden" name="appointmentId" value="${a.appointmentId}"/>
@@ -118,26 +144,66 @@
   </select>
   <button type="submit" class="status-update">Update</button>
 </form>
+<<<<<<< HEAD
+=======
+=======
+                  <form action="${pageContext.request.contextPath}/appointments" method="post" class="status-form">
+                    <input type="hidden" name="action" value="updateStatus"/>
+                    <input type="hidden" name="appointmentId" value="${a.appointmentId}"/>
+                    <select name="status" class="status-select">
+                      <option value="pending" ${a.appointmentStatus == 'pending' ? 'selected' : ''}>Pending</option>
+                      <option value="Booked" ${a.appointmentStatus == 'Booked' ? 'selected' : ''}>Booked</option>
+                      <option value="Completed" ${a.appointmentStatus == 'Completed' ? 'selected' : ''}>Completed</option>
+                      <option value="Cancelled" ${a.appointmentStatus == 'Cancelled' ? 'selected' : ''}>Cancelled</option>
+                    </select>
+                    <button type="submit" class="status-update">Update</button>
+                  </form>
+>>>>>>> 57b51863fd891538f57837ab03930237f9d7dc1d
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
                 </td>
 
                 <td>${a.patientName}</td>
 
                 <!-- Cancel button -->
                 <td>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
                   <form action="${pageContext.request.contextPath}/Admin/appointments" method="post" onsubmit="return confirm('Are you sure you want to cancel this appointment?');">
     				<input type="hidden" name="action" value="cancel"/>
    				 	<input type="hidden" name="appointmentId" value="${a.appointmentId}"/>
     				<button type="submit" class="btn-cancel"><i class="fas fa-times-circle"></i> Cancel</button>
   				</form>
+<<<<<<< HEAD
+=======
+=======
+                  <a href="appointments?action=cancel&id=${a.appointmentId}"
+                     class="btn-cancel"
+                     onclick="return confirm('Are you sure you want to cancel this appointment?');">
+                    <i class="fas fa-times-circle"></i> Cancel
+                  </a>
+>>>>>>> 57b51863fd891538f57837ab03930237f9d7dc1d
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
                 </td>
               </tr>
             </c:forEach>
           </c:when>
           <c:otherwise>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
             <tr>
  			 <td colspan="8" style="text-align:center; color: red;">No appointments found for your filters.</td>
 			</tr>
             
+<<<<<<< HEAD
+=======
+=======
+            <tr><td colspan="8" style="text-align:center;">No appointments found.</td></tr>
+>>>>>>> 57b51863fd891538f57837ab03930237f9d7dc1d
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
           </c:otherwise>
         </c:choose>
       </tbody>

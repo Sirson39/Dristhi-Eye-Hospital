@@ -1,4 +1,5 @@
 package com.dhristi.controller;
+<<<<<<< HEAD
 import java.io.IOException;
 import java.util.List;
 
@@ -47,4 +48,56 @@ public class FeedbackController extends HttpServlet {
         req.setAttribute("feedbackList", feedbacks);
         req.getRequestDispatcher("/WEB-INF/pages/Admin/Feedback.jsp").forward(req, resp);
     }
+=======
+
+import com.dhristi.model.UserModel;
+import com.dhristi.service.FeedbackService;
+import com.dhristi.model.FeedbackViewModel;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.*;
+
+import java.io.IOException;
+import java.util.List;
+
+@WebServlet("/Admin/feedbacks")
+public class FeedbackController extends HttpServlet {
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+	        throws ServletException, IOException {
+
+	    System.out.println("➡️ /Admin/feedbacks HIT");
+
+	    HttpSession session = req.getSession(false);
+	    System.out.println("🔍 session = " + session);
+
+	    if (session != null) {
+	        Object user = session.getAttribute("loggedUser");
+	        System.out.println("🔍 loggedUser = " + user);
+
+	        if (user instanceof com.dhristi.model.UserModel) {
+	            com.dhristi.model.UserModel model = (com.dhristi.model.UserModel) user;
+	            System.out.println("✅ userRole = " + model.getRole());
+	        } else {
+	            System.out.println("❌ loggedUser is NOT a UserModel");
+	        }
+	    }
+
+	    com.dhristi.model.UserModel loggedUser = (com.dhristi.model.UserModel) session.getAttribute("loggedUser");
+
+	    if (loggedUser == null || !"doctor".equalsIgnoreCase(loggedUser.getRole())) {
+	        System.out.println("❌ Unauthorized. Redirecting to login.");
+	        resp.sendRedirect(req.getContextPath() + "/login");
+	        return;
+	    }
+
+	    int doctorId = loggedUser.getUserId();
+	    System.out.println("✅ Authenticated doctor ID = " + doctorId);
+
+	    List<com.dhristi.model.FeedbackViewModel> feedbacks = new com.dhristi.service.FeedbackService().getFeedbacksForDoctor(doctorId);
+	    req.setAttribute("feedbackList", feedbacks);
+	    req.getRequestDispatcher("/WEB-INF/pages/Admin/Feedback.jsp").forward(req, resp);
+	}
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
 }

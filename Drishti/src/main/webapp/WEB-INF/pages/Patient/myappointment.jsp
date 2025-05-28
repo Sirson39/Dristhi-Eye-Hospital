@@ -71,7 +71,14 @@
     <a href="${pageContext.request.contextPath}/PatientDashboard"><i class="fas fa-chart-line"></i> My Dashboard</a>
     <a href="${pageContext.request.contextPath}/Patient/myappointment"class="active"><i class="fas fa-user-md"></i> My Appointments</a>
     <a href="${pageContext.request.contextPath}/Patient/BookAppointment"><i class="fas fa-calendar-check"></i> Book Appointments</a>
+<<<<<<< HEAD
     <a href="${pageContext.request.contextPath}/Patient/mytreatments"><i class="fas fa-notes-medical"></i> My Treatments</a>
+=======
+<<<<<<< HEAD
+    <a href="${pageContext.request.contextPath}/Patient/mytreatments"><i class="fas fa-notes-medical"></i> My Treatments</a>
+=======
+>>>>>>> 57b51863fd891538f57837ab03930237f9d7dc1d
+>>>>>>> c1b86ed616a7e37cb68448dc0a8222500e655b04
     <a href="${pageContext.request.contextPath}/Patient/feedback"><i class="fas fa-comment-dots"></i> Feedback</a>
     <a href="${pageContext.request.contextPath}/Patient/profile"><i class="fas fa-user-cog"></i> Profile Settings</a>
   </div>
