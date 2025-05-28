@@ -1,0 +1,293 @@
+/* ── RESET & BASE ── */
+* {
+    margin:0; padding:0; box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+  }
+  body {
+    background:#f4f4f4;
+  }
+  
+  /* ── SIDEBAR ── */
+  .sidebar {
+    position:fixed; top:0; left:0;
+    width:250px; height:100vh;
+    background:#135fa0; color:#fff;
+    padding:1rem; overflow-y:auto;
+  }
+  .sidebar::-webkit-scrollbar { display:none; }
+  
+  .logo-container {
+    /* move it up a bit */
+    margin: -3rem 0 1rem; /* pulls the logo up by half a rem */
+    margin-bottom: -1rem; 
+  }
+  .logo-container img {
+    /* force a smaller, fixed width */
+    width: 190px;       /* adjust as needed */
+    height: auto;
+    display: block;    /* centers if you have text-align:center on the parent */
+    margin: 0 auto;
+  }
+  .sidebar h2 {
+    text-align:center; margin-bottom:2rem; font-size:1.5rem;
+  }
+  .sidebar nav a {
+    display:flex; align-items:center; gap:10px;
+    color:white; text-decoration:none;
+    padding:0.75rem 1rem; margin-bottom:0.5rem;
+    border-radius:6px; transition:background 0.3s;
+  }
+  .sidebar nav a.active,
+  .sidebar nav a:hover {
+    background:#2ea6db;
+  }
+  
+  /* ── MAIN CONTENT ── */
+  .main-content {
+    margin-left:250px; padding:2rem;
+  }
+  
+  /* ── HEADER ROW ── */
+  .header-row {
+    display:flex; justify-content:space-between;
+    align-items:center; margin-bottom:1.5rem;
+  }
+  .page-header {
+    font-size:1.8rem; color:#135fa0; font-weight:bold;
+  }
+  /* Doctor Info Snapshot */
+  .doctor-info {
+    display:flex; align-items:center; gap:0.75rem;
+    background:#fff; padding:6px 12px;
+    border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1);
+  }
+  .doctor-info img {
+    width:40px; height:40px; border-radius:50%; object-fit:cover;
+  }
+  .info-text {
+    display:flex; flex-direction:column;
+    font-size:0.85rem; color:#333; line-height:1.2;
+  }
+  .info-text .name { font-weight:600; color:#135fa0; }
+  .info-text .spec { color:#555; }
+  .info-text .id   { color:#777; font-size:0.75rem; }
+  
+  /* ── SUMMARY CARDS ── */
+  .summary-cards {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:1rem; margin-bottom:2rem;
+  }
+  .summary-card {
+    background:#fff; border-radius:12px;
+    padding:1rem; text-align:center;
+    box-shadow:0 4px 8px rgba(0,0,0,0.05);
+  }
+  .summary-card i {
+    font-size:2rem; color:#2ea6db; margin-bottom:0.5rem;
+  }
+  .summary-card .title {
+    font-size:1rem; color:#135fa0; margin-bottom:0.25rem;
+  }
+  .summary-card .value {
+    font-size:1.5rem; font-weight:bold; color:#333;
+  }
+  .summary-card .subtitle {
+    font-size:0.85rem; color:#777; margin-top:0.25rem;
+  }
+  
+  /* ── REPORTS ROW ── */
+  
+  .reports-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.report-card {
+  flex: 1 1 240px;
+  background: #fff; border-radius: 12px;
+  padding: 1rem; box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  display: flex; flex-direction: column;
+}
+.report-card h5 { font-size: 1rem; color: #135fa0; margin-bottom: 0.75rem; }
+  /* ── CHART WRAPPER ── */
+  .chart-wrapper {
+    max-width:300px;      /* <-- limit width here */
+    height:160px;
+    margin:0 auto 1rem;
+  }
+  .chart-wrapper canvas {
+    width:100%!important;
+    height:100%!important;
+  }
+  
+  /* Legend under donut */
+  .legend {
+    list-style:none; padding-left:0;
+    margin-top:0.5rem; font-size:0.9rem;
+  }
+  .legend li {
+    display:flex; align-items:center; gap:0.5rem;
+    margin-bottom:0.5rem;
+  }
+  .legend .dot {
+    width:12px; height:12px; border-radius:50%;
+    display:inline-block;
+  }
+  .legend .new   { background:#d0e7ff; }
+  .legend .old   { background:#ffd8a8; }
+  .legend .total { background:#5484ff; }
+  
+  /* ── TABLE STYLES ── */
+  .appointments-table {
+    width:100%; border-collapse:collapse; font-size:0.9rem;
+  }
+  .appointments-table th,
+  .appointments-table td {
+    padding:8px; border-bottom:1px solid #eee; text-align:left;
+  }
+  .appointments-table th {
+    background:#f9f9f9; color:#135fa0;
+  }
+  .status {
+    padding:2px 6px; border-radius:4px; color:#fff;
+    font-size:0.8rem;
+  }
+  .status.pending   { background:#2ea6db; }
+  .status.completed { background:#28a745; }
+  .status.cancelled { background:#e74c3c; }
+  
+  /* ── NEXT PATIENT ── */
+  .next-patient dt {
+    font-weight:600; color:#555; margin-top:0.5rem;
+  }
+  .next-patient dd {
+    margin:0 0 0.5rem 0; color:#333;
+  }
+  
+  /* ── REQUESTS LIST ── */
+  .appt-requests { list-style: none; padding: 0; margin: 0; }
+.appt-request-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 6px 0;
+}
+.appt-request-item .actions i { margin-left: 10px; font-size: 1.2rem; cursor: pointer; }
+.appt-request-item .approve { color: green; }
+.appt-request-item .reject { color: red; }
+  
+  /* ── CALENDAR ── */
+  .calendar {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.calendar th,
+.calendar td {
+  border: 1px solid #eee; /* Light border */
+  padding: 8px;
+  text-align: center;
+  height: 40px;
+}
+
+.calendar th {
+  background: #f9f9f9;
+  color: #135fa0;
+}
+
+.calendar td.today {
+  background: #135fa0;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.calendar td {
+  color: #333;
+  height: 40px;   /* Ensures cells have height */
+  vertical-align: middle;  /* Center the date vertically */
+}
+
+
+/* Make sure container doesn’t overflow */
+.calendar-card {
+  overflow-x: auto;
+}
+.calendar-nav {
+  text-align: center;
+  margin-bottom: 8px;
+}
+.calendar-nav button {
+  background-color: #5484ff;
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.calendar-nav button:hover {
+  background-color: #4169e1;
+}
+
+#calendarTitle span {
+  margin-left: 5px; /* or more if needed */
+}
+
+#monthYear {
+  display: inline-block;
+  margin-left: 4px;
+}
+
+  
+  .subtitle {
+  font-size: 0.9rem;
+  color: #888; /* example color */
+  text-align: center; /* or left/right based on your layout */
+}
+
+.appt-requests {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.appt-request-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.patient-name {
+  font-weight: 500;
+  color: #333;
+}
+
+.actions i {
+  margin-left: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.actions i.approve {
+  color: green;
+}
+
+.actions i.reject {
+  color: red;
+}
+
+.status.booked {
+  background-color: #0d6efd;
+}
+
+  
+  /* MOBILE */
+  @media (max-width:768px) {
+    .sidebar { display:none; }
+    .main-content { margin-left:0; }
+  }
+  

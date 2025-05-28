@@ -1,0 +1,36 @@
+/* ==== Sidebar ==== */
+.sidebar {
+  width: 220px;
+  background-color: #0d6efd;
+  color: #fff;
+  min-height: 100vh;
+  padding: 20px 0;
+}
+
+.sidebar h2 {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 10px;               /* icon ↔ text spacing */
+  white-space: nowrap;     /* prevent wrapping */
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;      /* vertical / horizontal */
+  margin-bottom: 10px;     /* gap between links */
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar a i {
+  font-size: 1.1rem;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background-color: #084298;  /* pill‐shaped hover/active */
+}
